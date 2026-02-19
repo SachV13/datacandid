@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Social Media Observatory — 2004–2026</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Mono:wght@300;400;500&family=Fraunces:ital,wght@0,300;0,700;1,300&display=swap" rel="stylesheet">
+
+  <!-- Chart.js CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<div class="everything">
+
+  <!-- ═══════════════════════════════════════
+       HEADER
+  ═══════════════════════════════════════ -->
+  <header>
+    <div class="header-label">● Data Observatory · 2004 – 2026 · Verified Sources</div>
+    <h1>SOCIAL MEDIA<br><span>DATA REPORT</span></h1>
+    <p class="header-sub">Growth, AI Takeover, Algorithm Power &amp; The Decline of Human Authenticity</p>
+    <div class="header-stats">
+      <div class="hstat"><span class="hstat-val cyan">5.41B</span><span class="hstat-label">Global Users 2025</span></div>
+      <div class="hstat"><span class="hstat-val red">41%</span><span class="hstat-label">Facebook AI Posts 2024</span></div>
+      <div class="hstat"><span class="hstat-val green">0.2%</span><span class="hstat-label">FB Organic Reach 2025</span></div>
+      <div class="hstat"><span class="hstat-val yellow">$220B</span><span class="hstat-label">Ad Spend 2025</span></div>
+      <div class="hstat"><span class="hstat-val purple">2h 24m</span><span class="hstat-label">Daily Time Spent</span></div>
+    </div>
+  </header>
+
+  <!-- ═══════════════════════════════════════
+       TAB NAVIGATION
+  ═══════════════════════════════════════ -->
+  <nav>
+    <button class="tab active" onclick="showSection('mau', this)">Platform Growth</button>
+    <button class="tab" onclick="showSection('time', this)">Time Spent</button>
+    <button class="tab" onclick="showSection('ai', this)">AI Takeover</button>
+    <button class="tab" onclick="showSection('engage', this)">Engagement Collapse</button>
+    <button class="tab" onclick="showSection('trust', this)">Authenticity &amp; Trust</button>
+    <button class="tab" onclick="showSection('ads', this)">Ad Economy</button>
+    <button class="tab" onclick="showSection('bereal', this)">BeReal Experiment</button>
+    <button class="tab" onclick="showSection('bots', this)">Bots &amp; Fakes</button>
+    <button class="tab" onclick="showSection('algo', this)">Algorithm Timeline</button>
+  </nav>
+
+  <!-- ═══════════════════════════════════════
+       MAIN CONTENT
+  ═══════════════════════════════════════ -->
+  <main>
+
+    <!-- ── SECTION 1: MAU GROWTH ── -->
+    <section class="section active" id="sec-mau">
+      <div class="section-title">Platform Monthly Active Users — 2004 to 2025</div>
+      <div class="section-desc">Combined global user base grew from ~1 million in 2004 to 5.41 billion — covering 65.7% of the world's entire population. Each platform showed distinct growth curves driven by product launches, algorithm changes, and cultural moments.</div>
+
+      <div class="row">
+        <div class="panel">
+          <div class="panel-title">MAU over time — all platforms (millions)</div>
+          <div class="chart-wrap h360"><canvas id="mauChart"></canvas></div>
+        </div>
+      </div>
+
+      <div class="row row-2">
+        <div class="panel">
+          <div class="panel-title">Total global social media users (billions)</div>
+          <div class="chart-wrap h240"><canvas id="totalChart"></canvas></div>
+        </div>
+        <div class="panel yellow">
+          <div class="panel-title">2025 platform standings (MAU, millions)</div>
+          <div class="chart-wrap h240"><canvas id="barMau2025"></canvas></div>
+        </div>
+      </div>
+
+      <div class="stat-grid">
+        <div class="stat-card"><span class="stat-num cyan">3.07B</span><span class="stat-label">Facebook MAUs 2025</span></div>
+        <div class="stat-card"><span class="stat-num yellow">2.0B</span><span class="stat-label">Instagram MAUs 2025</span></div>
+        <div class="stat-card"><span class="stat-num red">1.99B</span><span class="stat-label">TikTok MAUs 2025</span></div>
+        <div class="stat-card"><span class="stat-num orange">765M</span><span class="stat-label">Reddit MAUs 2025</span></div>
+        <div class="stat-card"><span class="stat-num purple">557M</span><span class="stat-label">X/Twitter MAUs 2025</span></div>
+        <div class="stat-card"><span class="stat-num cyan">65.7%</span><span class="stat-label">World population on social media</span></div>
+      </div>
+    </section>
+
+    <!-- ── SECTION 2: TIME SPENT ── -->
+    <section class="section" id="sec-time">
+      <div class="section-title yellow">Daily Time Spent on Social Media</div>
+      <div class="section-desc">Global average daily time grew from 90 minutes in 2012 to 150 minutes peak in 2022, then began a slow decline as user fatigue emerged. TikTok now dominates individual app time at 55 min/day.</div>
+
+      <div class="row row-2">
+        <div class="panel yellow">
+          <div class="panel-title">Global average daily minutes (2012–2025)</div>
+          <div class="chart-wrap h280"><canvas id="timeChart"></canvas></div>
+        </div>
+        <div class="panel">
+          <div class="panel-title">Average daily minutes per platform (2025)</div>
+          <div class="bar-list" id="platformBars">
+            <!-- Injected by js/bars.js -->
+          </div>
+        </div>
+      </div>
+
+      <div class="insight">
+        <strong>TikTok users average 23 hours 28 minutes per month</strong> — more than any other single platform. Users now average 6.75 different social platforms per month. Despite user fatigue in Western markets, global average remains stable at 2h 24 min/day in 2025.
+      </div>
+    </section>
+
+    <!-- ── SECTION 3: AI TAKEOVER ── -->
+    <section class="section" id="sec-ai">
+      <div class="section-title red">The AI Takeover — Content &amp; Adoption</div>
+      <div class="section-desc">Before ChatGPT (Nov 2022), AI-generated social content was near zero. In just 2 years, AI posts on Facebook jumped 670%+. 71% of all social media images are now AI-generated. Only 3.6% of social media professionals don't use AI.</div>
+
+      <div class="row row-2">
+        <div class="panel red">
+          <div class="panel-title">AI-generated content by platform (% of posts, 2022–2025)</div>
+          <div class="chart-wrap h280"><canvas id="aiChart"></canvas></div>
+        </div>
+        <div class="panel">
+          <div class="panel-title">AI / organisational adoption rate over time (%)</div>
+          <div class="chart-wrap h280"><canvas id="aiAdoptChart"></canvas></div>
+        </div>
+      </div>
+
+      <div class="stat-grid">
+        <div class="stat-card"><span class="stat-num red">41.18%</span><span class="stat-label">Facebook posts AI-generated (Nov 2024)</span></div>
+        <div class="stat-card"><span class="stat-num red">54%</span><span class="stat-label">LinkedIn posts likely AI-generated</span></div>
+        <div class="stat-card"><span class="stat-num red">13%</span><span class="stat-label">Reddit AI posts (↑146% since 2021)</span></div>
+        <div class="stat-card"><span class="stat-num red">71%</span><span class="stat-label">Social media images AI-generated</span></div>
+        <div class="stat-card"><span class="stat-num red">74.2%</span><span class="stat-label">Web pages with AI content (Apr 2025)</span></div>
+        <div class="stat-card"><span class="stat-num red">96.4%</span><span class="stat-label">Social pros using AI in workflow</span></div>
+        <div class="stat-card"><span class="stat-num cyan">1.3B+</span><span class="stat-label">TikTok AI videos labeled (2024)</span></div>
+        <div class="stat-card"><span class="stat-num yellow">$7B</span><span class="stat-label">AI influencer economy (2025)</span></div>
+      </div>
+
+      <div class="insight red">
+        <strong>The ChatGPT inflection point:</strong> AI posts on Facebook went from 5.34% (2022) to 41.18% (Nov 2024) — a <strong>4.3× increase in just 2 years</strong>. 80%+ of all content recommendations are now AI-driven.
+      </div>
+    </section>
+
+    <!-- ── SECTION 4: ENGAGEMENT ── -->
+    <section class="section" id="sec-engage">
+      <div class="section-title green">Organic Engagement Collapse</div>
+      <div class="section-desc">Facebook's organic reach dropped 98% in 13 years — from 16% of followers in 2012 to 0.2% in 2025. As AI floods feeds and algorithms throttle organic content to push ads, real human engagement is at an all-time low across every platform.</div>
+
+      <div class="row">
+        <div class="panel green">
+          <div class="panel-title">Organic engagement rate by platform (%) — 2012 to 2025</div>
+          <div class="chart-wrap h320"><canvas id="engageChart"></canvas></div>
+        </div>
+      </div>
+
+      <div class="row row-2">
+        <div class="panel">
+          <div class="panel-title">Facebook organic reach — visual decline</div>
+          <div class="bar-list" id="fbReachBars"></div>
+        </div>
+        <div class="panel">
+          <div class="panel-title">Engagement rate comparison: 2018 vs 2025</div>
+          <table class="data-table">
+            <thead><tr><th>Platform</th><th>2018</th><th>2025</th><th>Change</th></tr></thead>
+            <tbody>
+              <tr><td>Facebook</td><td>1.5%</td><td>0.2%</td><td><span class="badge red">−87%</span></td></tr>
+              <tr><td>Instagram</td><td>4%</td><td>0.5%</td><td><span class="badge red">−87%</span></td></tr>
+              <tr><td>TikTok</td><td>29%</td><td>4.5%</td><td><span class="badge red">−84%</span></td></tr>
+              <tr><td>X/Twitter</td><td>0.4%</td><td>0.25%</td><td><span class="badge red">−37%</span></td></tr>
+            </tbody>
+          </table>
+          <div class="insight green mt16" style="font-size:10px">Real engagement is at an all-time low across every platform. Organic human content is buried under algorithm-favored and paid reach.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── SECTION 5: TRUST ── -->
+    <section class="section" id="sec-trust">
+      <div class="section-title purple">Authenticity &amp; Consumer Trust</div>
+      <div class="section-desc">Public trust in AI companies has dropped 8 points since 2021. Nearly 60% of consumers now doubt the authenticity of online content. Over half reduce their engagement when they suspect AI-generated content.</div>
+
+      <div class="row row-2">
+        <div class="panel purple">
+          <div class="panel-title">Consumer trust &amp; authenticity doubt over time (%)</div>
+          <div class="chart-wrap h280"><canvas id="trustChart"></canvas></div>
+        </div>
+        <div class="panel">
+          <div class="panel-title">2024 Consumer sentiment snapshot</div>
+          <div class="bar-list" id="trustBars"></div>
+        </div>
+      </div>
+
+      <div class="insight purple">
+        <strong>The authenticity paradox:</strong> In 2023, 56% of consumers preferred AI content <em>before knowing it was AI</em>. Once told, only 26% still preferred it. Trust in AI influencers fell from 34% (2023) to 26% (2024) — yet platforms continue prioritising AI content because it maximises engagement.
+      </div>
+    </section>
+
+    <!-- ── SECTION 6: ADS ── -->
+    <section class="section" id="sec-ads">
+      <div class="section-title yellow">The Advertising Engine</div>
+      <div class="section-desc">Every algorithm decision ultimately serves ad revenue. Social media ad spend grew from $51B in 2017 to $220B in 2025. Meta alone captures $134B+ annually. Algorithms don't optimise for human connection — they optimise for advertiser return.</div>
+
+      <div class="row row-2">
+        <div class="panel yellow">
+          <div class="panel-title">Global social media ad spend (billions USD)</div>
+          <div class="chart-wrap h280"><canvas id="adSpendChart"></canvas></div>
+        </div>
+        <div class="panel">
+          <div class="panel-title">Platform ad revenue share 2025</div>
+          <div class="chart-wrap h280"><canvas id="adPieChart"></canvas></div>
+        </div>
+      </div>
+
+      <div class="stat-grid">
+        <div class="stat-card"><span class="stat-num yellow">$219.8B</span><span class="stat-label">Total social media ad spend 2025</span></div>
+        <div class="stat-card"><span class="stat-num yellow">$134B+</span><span class="stat-label">Meta (Facebook + Instagram) 2025</span></div>
+        <div class="stat-card"><span class="stat-num yellow">$18B</span><span class="stat-label">TikTok ad revenue 2024 (+29% YoY)</span></div>
+        <div class="stat-card"><span class="stat-num yellow">$4.2B</span><span class="stat-label">Pinterest ad revenue 2025</span></div>
+        <div class="stat-card"><span class="stat-num red">+328%</span><span class="stat-label">Ad spend growth since 2017</span></div>
+        <div class="stat-card"><span class="stat-num cyan">61%</span><span class="stat-label">Meta's share of total social ad spend</span></div>
+      </div>
+    </section>
+
+    <!-- ── SECTION 7: BEREAL ── -->
+    <section class="section" id="sec-bereal">
+      <div class="section-title red">The BeReal Experiment</div>
+      <div class="section-desc">BeReal proved humans crave authenticity — and proved they won't stay for it without algorithmic dopamine loops. It peaked at 73M users in 2022 before collapsing to under 10M by 2024. Every major platform cloned its dual-camera feature and moved on.</div>
+
+      <div class="row row-2">
+        <div class="panel red">
+          <div class="panel-title">BeReal monthly active users (millions) — rise and fall</div>
+          <div class="chart-wrap h280"><canvas id="berealChart"></canvas></div>
+        </div>
+        <div class="panel">
+          <div class="panel-title">BeReal vs. TikTok — the authenticity gap</div>
+          <table class="data-table">
+            <thead><tr><th>Metric</th><th>BeReal</th><th>TikTok</th></tr></thead>
+            <tbody>
+              <tr><td>Launch Year</td><td>2020</td><td>2017 (intl.)</td></tr>
+              <tr><td>Algorithm</td><td>None (reverse-chrono)</td><td>Fully AI-driven FYP</td></tr>
+              <tr><td>Editing / Filters</td><td>None allowed</td><td>Unlimited</td></tr>
+              <tr><td>Peak MAU</td><td>73M (2022)</td><td>1.99B (2025)</td></tr>
+              <tr><td>Current MAU (2025)</td><td>~5M</td><td>~1.99B</td></tr>
+              <tr><td>Avg. Daily Time</td><td>&lt;5 min</td><td>55 min</td></tr>
+              <tr><td>Virality Possible?</td><td>No</td><td>Yes — anyone</td></tr>
+              <tr><td>Outcome</td><td><span class="badge red">Sold / Declining</span></td><td><span class="badge green">Dominant</span></td></tr>
+            </tbody>
+          </table>
+          <div class="insight red mt16" style="font-size:10px"><strong>The lesson:</strong> Authenticity without a reward system cannot compete with dopamine-optimised algorithms.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── SECTION 8: BOTS ── -->
+    <section class="section" id="sec-bots">
+      <div class="section-title red">Fake Accounts &amp; Bot Activity</div>
+      <div class="section-desc">Every platform harbours hundreds of millions of fake or bot accounts. Facebook removes 1–2 billion fake accounts every quarter. Bot percentages remain stubbornly high, contaminating engagement metrics and eroding authenticity.</div>
+
+      <div class="row row-2">
+        <div class="panel red">
+          <div class="panel-title">Estimated fake/bot account % by platform (2024)</div>
+          <div class="chart-wrap h260"><canvas id="botsChart"></canvas></div>
+        </div>
+        <div class="panel">
+          <div class="panel-title">Estimated fake accounts — absolute numbers (millions)</div>
+          <div class="chart-wrap h260"><canvas id="botsAbsChart"></canvas></div>
+        </div>
+      </div>
+
+      <div class="stat-grid">
+        <div class="stat-card"><span class="stat-num red">122M</span><span class="stat-label">Estimated fake Facebook accounts (2024)</span></div>
+        <div class="stat-card"><span class="stat-num red">150M</span><span class="stat-label">Estimated fake Instagram accounts</span></div>
+        <div class="stat-card"><span class="stat-num red">67M</span><span class="stat-label">Estimated fake Twitter/X accounts</span></div>
+        <div class="stat-card"><span class="stat-num red">1–2B</span><span class="stat-label">Fake accounts Facebook removes per quarter</span></div>
+        <div class="stat-card"><span class="stat-num red">500K+</span><span class="stat-label">Deepfake videos shared online (2024)</span></div>
+        <div class="stat-card"><span class="stat-num cyan">12%</span><span class="stat-label">Estimated bot rate on X/Twitter</span></div>
+      </div>
+    </section>
+
+    <!-- ── SECTION 9: ALGORITHM TIMELINE ── -->
+    <section class="section" id="sec-algo">
+      <div class="section-title">Algorithm Evolution Timeline</div>
+      <div class="section-desc">From Facebook's News Feed in 2006 to TikTok's AI-native For You Page in 2016 to today's behavioural surveillance systems — the algorithm has become the most powerful editorial force in human history.</div>
+
+      <div class="row row-2">
+        <div class="panel scrollable">
+          <div class="panel-title">Key algorithm milestones</div>
+          <div class="timeline" id="algoTimeline">
+            <!-- Injected by js/timeline.js -->
+          </div>
+        </div>
+        <div class="panel">
+          <div class="panel-title">Years since algorithmic feed replaced chronological</div>
+          <div class="bar-list" id="algoBars"></div>
+          <div class="insight mt16">
+            <strong>None of the top 5 social platforms show content chronologically by default.</strong> What you see is entirely decided by an AI trained to maximise time-on-platform — which directly maximises advertiser revenue.
+          </div>
+          <table class="data-table mt16">
+            <thead><tr><th>Metric</th><th>Pre-Algorithm</th><th>2025</th></tr></thead>
+            <tbody>
+              <tr><td>FB Organic Reach</td><td>16%</td><td>0.2%</td></tr>
+              <tr><td>Content author</td><td>Humans</td><td>41%+ AI</td></tr>
+              <tr><td>Feed curation</td><td>Chronological</td><td>100% AI</td></tr>
+              <tr><td>Ad targeting</td><td>Demographic</td><td>Behavioural AI</td></tr>
+              <tr><td>Discovery</td><td>Friends → content</td><td>AI → content</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+  </main>
+</div><!-- /.everything -->
+
+<script src="main.js"></script>
+</body>
+</html>
